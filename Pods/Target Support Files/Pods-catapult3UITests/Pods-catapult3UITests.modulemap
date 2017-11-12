@@ -1,0 +1,6 @@
+framework module Pods_catapult3UITests {
+  umbrella header "Pods-catapult3UITests-umbrella.h"
+
+  export *
+  module * { export * }
+}
