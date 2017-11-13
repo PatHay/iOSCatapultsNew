@@ -76,7 +76,7 @@
                                     <constraint firstAttribute="width" constant="240" id="jwj-0G-Cb6"/>
                                 </constraints>
                                 <attributedString key="attributedText">
-                                    <fragment content="0">
+                                    <fragment content="0 Meters">
                                         <attributes>
                                             <font key="NSFont" metaFont="system" size="18"/>
                                             <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
@@ -164,7 +164,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="xpf-UB-7Un" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="yfl-Xn-aQ7">
-                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <rect key="frame" x="0.0" y="20" width="375" height="48"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>

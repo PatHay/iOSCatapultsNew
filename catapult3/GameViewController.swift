@@ -23,7 +23,7 @@ class GameViewController: UIViewController{
     
     var currentLat: Double? = 37.773972 //San Francisco
     var currentLong: Double? = -122.431297 //San Francisco
-    var angle: Double? = 79.00 //randomly chosen
+    var angle: Double? = 50.00 //randomly chosen
     var distance: Double? = 0
     
     var targetLat: Double? = 0
@@ -36,7 +36,7 @@ class GameViewController: UIViewController{
     @IBAction func powerValueSlider(_ sender: UISlider) {
 //        let value = "\(sender.value)"
         let value = round(Double(Int(basePower.value)))
-        powerValue.text = String(value)
+        powerValue.text = "\(String(value))"
         
         calculate()
         
@@ -61,7 +61,7 @@ class GameViewController: UIViewController{
             let multiply = base * powerUp
             
             distance = round(multiply)
-            powerValue.text = String(round(multiply))
+            powerValue.text = "\(String(round(multiply))) Meters"
             
         }
     }

@@ -160,36 +160,38 @@ class MapsViewController: UIViewController, GMSMapViewDelegate, CLLocationManage
         }
         //return distanceToTarget
     }
-    func mapView(_ mapView: GMSMapView, didTapAt coordinate: CLLocationCoordinate2D) {
-        /// This function is based on the users tap on the screen.  It returns the coordinates.
-        
-        let location1 = CLLocation(latitude: targetLat, longitude: targetLong)// this is the tartget
-        let location2 = CLLocation(latitude: coordinate.latitude, longitude: coordinate.longitude) // this is the chosen target.
-        
-        if targetLong != 0.0000 {
-            // get distance from this click to the target
-            dropMarker(latitude: coordinate.latitude, longitude: coordinate.longitude, targetIconType: "explosion")
-            let distanceToTarget = getDistanceByPoint(location1, point2: location2)
-            if distanceToTarget >= 10000.000 {
-                print("You're to far")
-            } else if distanceToTarget < 10000.000 && distanceToTarget >= 5000.000{
-                print("You're getting closer. you're distance : ", String(distanceToTarget))
-            } else if distanceToTarget < 5000.000 && distanceToTarget >= 2500.000{
-                print("You're super close ", String(distanceToTarget))
-            } else {
-                print("You hit it. your distance : ", String(distanceToTarget))
-            }
-            //
-            
-        } else {
-            // set the target where you want
-            targetLong = coordinate.longitude
-            targetLat = coordinate.latitude
-            dropMarker(latitude: targetLat, longitude: targetLong, targetIconType: "target")
-        }
-        
-    }
-
+    
+    //tapping to fire shots +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+//    func mapView(_ mapView: GMSMapView, didTapAt coordinate: CLLocationCoordinate2D) {
+//        /// This function is based on the users tap on the screen.  It returns the coordinates.
+//
+//        let location1 = CLLocation(latitude: targetLat, longitude: targetLong)// this is the tartget
+//        let location2 = CLLocation(latitude: coordinate.latitude, longitude: coordinate.longitude) // this is the chosen target.
+//
+//        if targetLong != 0.0000 {
+//            // get distance from this click to the target
+//            dropMarker(latitude: coordinate.latitude, longitude: coordinate.longitude, targetIconType: "explosion")
+//            let distanceToTarget = getDistanceByPoint(location1, point2: location2)
+//            if distanceToTarget >= 10000.000 {
+//                print("You're to far")
+//            } else if distanceToTarget < 10000.000 && distanceToTarget >= 5000.000{
+//                print("You're getting closer. you're distance : ", String(distanceToTarget))
+//            } else if distanceToTarget < 5000.000 && distanceToTarget >= 2500.000{
+//                print("You're super close ", String(distanceToTarget))
+//            } else {
+//                print("You hit it. your distance : ", String(distanceToTarget))
+//            }
+//            //
+//
+//        } else {
+//            // set the target where you want
+//            targetLong = coordinate.longitude
+//            targetLat = coordinate.latitude
+//            dropMarker(latitude: targetLat, longitude: targetLong, targetIconType: "target")
+//        }
+//
+//    }
+//++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
     func dropMarker(latitude: Double, longitude: Double, targetIconType: String){
         // Creates a marker in the center of the map.
         
