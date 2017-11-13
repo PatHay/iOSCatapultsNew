@@ -29,6 +29,8 @@ class GameViewController: UIViewController{
     var targetLat: Double? = 0
     var targetLong: Double? = 0
     
+    let locationManager = CLLocationManager()
+    
     
     //Storyboard Controls
     //--------------------------------
@@ -68,15 +70,14 @@ class GameViewController: UIViewController{
     //--------------------------------
 
     
-    
-    var locationManager: CLLocationManager!
+
     
     var audioPlayer = AVAudioPlayer()
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
-//        var delegate: TargetDelegate?
+
         //Music player Start++++++++++++++
         
         do {
@@ -92,19 +93,21 @@ class GameViewController: UIViewController{
         
         //Heading Information+++++++++++++++++++++++++++++++++
         
-        locationManager = CLLocationManager()
-        locationManager.delegate = self as? CLLocationManagerDelegate
         
+        locationManager.delegate = (self as! CLLocationManagerDelegate)
+        locationManager.desiredAccuracy = kCLLocationAccuracyBest
+        locationManager.requestWhenInUseAuthorization()
         locationManager.startUpdatingHeading()
-        
         
         
         //++++++++++++++++++++++++++++++++++++++++++++++++++++
         
         //Heading Information+++++++++++++++++++++++++++++++++
-        func locationManagerChecker(manager: CLLocationManager!, didUpdateHeading newHeading: CLHeading!){
-            print("Heading information: \(newHeading.magneticHeading) at: \(newHeading.timestamp)")
-        }
+//        func locationManagerChecker(manager: CLLocationManager!, didUpdateHeading newHeading: CLHeading!){
+//            print("Heading information: \(newHeading.magneticHeading) at: \(newHeading.timestamp)")
+//        }
+        
+//        locationManagerChecker(manager: locationManager, didUpdateHeading: <#T##CLHeading!#>)
         
         //++++++++++++++++++++++++++++++++++++++++++++++++++++
         
@@ -135,6 +138,17 @@ class GameViewController: UIViewController{
             }
         }
     }
+    
+    func locationManagerChecker(manager: CLLocationManager!, didUpdateLocations locations: [CLLocation]){
+        let location = locations[0]
+        
+        let myLocation: CLLocationCoordinate2D
+        
+        
+    }
+    
+    
+    
     
     override var shouldAutorotate: Bool {
         return true
