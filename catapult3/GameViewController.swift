@@ -12,14 +12,22 @@ import GameplayKit
 import GoogleMaps
 import AVFoundation
 
-class GameViewController: UIViewController {
+class GameViewController: UIViewController{
     
     @IBOutlet weak var powerUpSlider: UISlider!
     
     @IBOutlet weak var basePower: UISlider!
-
+    
     
     @IBOutlet weak var powerValue: UILabel!
+    
+    var currentLat: Double? = 37.773972 //San Francisco
+    var currentLong: Double? = -122.431297 //San Francisco
+    var angle: Double? = 79.00 //randomly chosen
+    var distance: Double? = 0
+    
+    var targetLat: Double? = 0
+    var targetLong: Double? = 0
     
     
     //Storyboard Controls
@@ -40,6 +48,7 @@ class GameViewController: UIViewController {
     }
     
     @IBAction func fireButtonPressed(_ sender: UIButton) {
+        distanceCalc()
         print("Fire!")
     }
 
@@ -51,6 +60,7 @@ class GameViewController: UIViewController {
             
             let multiply = base * powerUp
             
+            distance = round(multiply)
             powerValue.text = String(round(multiply))
             
         }
@@ -66,7 +76,7 @@ class GameViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+//        var delegate: TargetDelegate?
         //Music player Start++++++++++++++
         
         do {
@@ -148,11 +158,44 @@ class GameViewController: UIViewController {
     }
     
     
+    func distanceCalc(){
+        let earthRadius = 6378140.00 // in meters
+        
+        //degrees to radians
+        let lat1 = currentLat! * (M_PI/180)
+        let long1 = currentLong! * (M_PI/180)
+        let brng = angle! * (M_PI/180)
+        
+        let latCalc1 = sin(lat1)*cos(distance!/earthRadius)
+        let latCalc2 = cos(lat1)*sin(distance!/earthRadius)*cos(brng)
+        
+        var lat2 = asin(latCalc1 + latCalc2)
+        
+        let longCalc1 = sin(brng)*sin(distance!/earthRadius)*cos(lat1)
+        let longCalc2 = cos(distance!/earthRadius)-sin(lat1)*sin(lat2)
+        var long2 = long1 + atan2(longCalc1, longCalc2)
+        
+        //radians to degrees
+        lat2 = lat2*(180/M_PI)
+        long2 = long2*(180/M_PI)
+        
+        //6 decimal point for coords
+        
+//        print(floor(lat2 * 1000000)/1000000)
+//        print(floor(long2 * 1000000)/1000000)
+        
+        targetLat = floor(lat2 * 1000000)/1000000
+        targetLong = floor(long2 * 1000000)/1000000
+        
+    }
+    
     //below sends data to the next view to calculate the shot
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let destination = segue.destination as! MapsViewController
-        destination.startlong = -122.431297
-        destination.startlat = 37.7749
+        destination.startlong = targetLong!
+        destination.startlat = targetLat!
+        
+
     }
 }
 

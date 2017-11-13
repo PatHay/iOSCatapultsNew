@@ -12,6 +12,7 @@
 		77A1412FD5491DF0CF4819C4 /* Pods_catapult3.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8384CA938BCDB4ECF4BBF137 /* Pods_catapult3.framework */; };
 		876FD2151FB94FF6007167D0 /* PiratesMainTheme.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 876FD2141FB94FF6007167D0 /* PiratesMainTheme.mp3 */; };
 		876FD2191FB95377007167D0 /* catapult.gif in Resources */ = {isa = PBXBuildFile; fileRef = 876FD2181FB95377007167D0 /* catapult.gif */; };
+		876FD21B1FBA083C007167D0 /* TargetDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 876FD21A1FBA083C007167D0 /* TargetDelegate.swift */; };
 		8782737A1FB7CC12004A2221 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 878273791FB7CC12004A2221 /* AppDelegate.swift */; };
 		8782737C1FB7CC12004A2221 /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 8782737B1FB7CC12004A2221 /* GameScene.sks */; };
 		8782737E1FB7CC12004A2221 /* Actions.sks in Resources */ = {isa = PBXBuildFile; fileRef = 8782737D1FB7CC12004A2221 /* Actions.sks */; };
@@ -51,6 +52,7 @@
 		8384CA938BCDB4ECF4BBF137 /* Pods_catapult3.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_catapult3.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		876FD2141FB94FF6007167D0 /* PiratesMainTheme.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = PiratesMainTheme.mp3; sourceTree = "<group>"; };
 		876FD2181FB95377007167D0 /* catapult.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = catapult.gif; sourceTree = "<group>"; };
+		876FD21A1FBA083C007167D0 /* TargetDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TargetDelegate.swift; sourceTree = "<group>"; };
 		878273761FB7CC12004A2221 /* catapult3.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = catapult3.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		878273791FB7CC12004A2221 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8782737B1FB7CC12004A2221 /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
@@ -136,6 +138,7 @@
 		878273781FB7CC12004A2221 /* catapult3 */ = {
 			isa = PBXGroup;
 			children = (
+				876FD21A1FBA083C007167D0 /* TargetDelegate.swift */,
 				878273791FB7CC12004A2221 /* AppDelegate.swift */,
 				8782737B1FB7CC12004A2221 /* GameScene.sks */,
 				876FD2131FB94FE3007167D0 /* Music */,
@@ -492,6 +495,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				878273801FB7CC12004A2221 /* GameScene.swift in Sources */,
+				876FD21B1FBA083C007167D0 /* TargetDelegate.swift in Sources */,
 				878273821FB7CC12004A2221 /* GameViewController.swift in Sources */,
 				8782737A1FB7CC12004A2221 /* AppDelegate.swift in Sources */,
 				878273B01FB7DD87004A2221 /* delegation.swift in Sources */,
