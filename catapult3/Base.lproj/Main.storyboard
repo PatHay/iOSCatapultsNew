@@ -32,26 +32,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OeE-vl-lqd">
-                                <rect key="frame" x="145" y="443" width="85" height="81"/>
-                                <color key="backgroundColor" red="0.92698863679999999" green="0.72161869960000002" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="85" id="eqE-zE-gJl"/>
-                                    <constraint firstAttribute="height" constant="81" id="imI-b0-EXE"/>
-                                </constraints>
-                                <state key="normal" title="Fire">
-                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </state>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                        <integer key="value" value="10"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                                <connections>
-                                    <action selector="fireButtonPressed:" destination="xMY-Zf-pXV" eventType="touchUpInside" id="nAs-mn-8Bx"/>
-                                    <segue destination="BV1-FR-VrT" kind="presentation" id="f7x-s6-rTO"/>
-                                </connections>
-                            </button>
                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minValue="1" maxValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="mVO-Mf-N1c">
                                 <rect key="frame" x="17" y="562" width="270" height="31"/>
                                 <constraints>
@@ -62,7 +42,7 @@
                                     <action selector="powerValueSlider:" destination="xMY-Zf-pXV" eventType="valueChanged" id="41F-ZJ-fMY"/>
                                 </connections>
                             </slider>
-                            <slider opaque="NO" contentMode="scaleToFill" highlighted="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minValue="1" maxValue="10" translatesAutoresizingMaskIntoConstraints="NO" id="jF8-vK-5vC">
+                            <slider opaque="NO" contentMode="scaleToFill" highlighted="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="10" translatesAutoresizingMaskIntoConstraints="NO" id="jF8-vK-5vC">
                                 <rect key="frame" x="17" y="609" width="270" height="31"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="5BU-MT-U0d"/>
@@ -79,7 +59,7 @@
                                     <constraint firstAttribute="height" constant="40" id="VL1-Mj-jNd"/>
                                     <constraint firstAttribute="width" constant="70" id="W5X-F9-aKU"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                                 <userDefinedRuntimeAttributes>
@@ -88,14 +68,14 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hlm-cU-Tbd">
-                                <rect key="frame" x="90" y="15" width="70" height="40"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hlm-cU-Tbd">
+                                <rect key="frame" x="90" y="15" width="240" height="40"/>
                                 <color key="backgroundColor" red="0.76819580190000003" green="0.88819080029999997" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="Fqa-qj-jK7"/>
-                                    <constraint firstAttribute="width" constant="70" id="jwj-0G-Cb6"/>
+                                    <constraint firstAttribute="width" constant="240" id="jwj-0G-Cb6"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                                 <userDefinedRuntimeAttributes>
@@ -116,8 +96,29 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OeE-vl-lqd">
+                                <rect key="frame" x="71" y="203" width="232" height="261"/>
+                                <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="232" id="eqE-zE-gJl"/>
+                                    <constraint firstAttribute="height" constant="261" id="imI-b0-EXE"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="50"/>
+                                <state key="normal" title="Fire!!!!">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="fireButtonPressed:" destination="xMY-Zf-pXV" eventType="touchUpInside" id="nAs-mn-8Bx"/>
+                                    <segue destination="BV1-FR-VrT" kind="presentation" id="f7x-s6-rTO"/>
+                                </connections>
+                            </button>
                         </subviews>
-                        <color key="backgroundColor" red="1" green="0.66840909049999997" blue="0.039790890099999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="Qqr-Fa-lWA" firstAttribute="bottom" secondItem="F4g-vp-TyQ" secondAttribute="bottom" constant="32" id="0Ie-l6-tf7"/>
                             <constraint firstItem="mVO-Mf-N1c" firstAttribute="leading" secondItem="Qqr-Fa-lWA" secondAttribute="leading" constant="19" id="1X0-F3-kdB"/>
@@ -129,25 +130,26 @@
                             <constraint firstItem="6is-kp-Vs7" firstAttribute="top" secondItem="Phd-wA-3Tf" secondAttribute="top" constant="15" id="Py0-yY-mYZ"/>
                             <constraint firstItem="Qqr-Fa-lWA" firstAttribute="trailing" secondItem="I00-GD-rEU" secondAttribute="trailing" constant="29" id="VVJ-vN-SJP"/>
                             <constraint firstItem="I00-GD-rEU" firstAttribute="leading" secondItem="mVO-Mf-N1c" secondAttribute="trailing" constant="13.5" id="Zab-78-ewR"/>
-                            <constraint firstItem="mVO-Mf-N1c" firstAttribute="top" secondItem="OeE-vl-lqd" secondAttribute="bottom" constant="38" id="eqK-GT-Zfv"/>
+                            <constraint firstItem="mVO-Mf-N1c" firstAttribute="top" secondItem="OeE-vl-lqd" secondAttribute="bottom" constant="98" id="eqK-GT-Zfv"/>
                             <constraint firstItem="F4g-vp-TyQ" firstAttribute="leading" secondItem="jF8-vK-5vC" secondAttribute="trailing" constant="8" id="esh-84-5lU"/>
-                            <constraint firstItem="Qqr-Fa-lWA" firstAttribute="trailing" secondItem="OeE-vl-lqd" secondAttribute="trailing" constant="145" id="kBQ-vN-lPc"/>
+                            <constraint firstItem="Qqr-Fa-lWA" firstAttribute="trailing" secondItem="OeE-vl-lqd" secondAttribute="trailing" constant="72" id="kBQ-vN-lPc"/>
                             <constraint firstItem="jF8-vK-5vC" firstAttribute="leading" secondItem="Qqr-Fa-lWA" secondAttribute="leading" constant="19" id="uw5-5K-7Ml"/>
-                            <constraint firstItem="OeE-vl-lqd" firstAttribute="leading" secondItem="Qqr-Fa-lWA" secondAttribute="leading" constant="145" id="vMK-6R-M0g"/>
-                            <constraint firstItem="Qqr-Fa-lWA" firstAttribute="trailing" secondItem="Hlm-cU-Tbd" secondAttribute="trailing" constant="215" id="vwv-mQ-o78"/>
+                            <constraint firstItem="OeE-vl-lqd" firstAttribute="leading" secondItem="Qqr-Fa-lWA" secondAttribute="leading" constant="71" id="vMK-6R-M0g"/>
+                            <constraint firstItem="Qqr-Fa-lWA" firstAttribute="trailing" secondItem="Hlm-cU-Tbd" secondAttribute="trailing" constant="45" id="vwv-mQ-o78"/>
                             <constraint firstItem="jF8-vK-5vC" firstAttribute="top" secondItem="mVO-Mf-N1c" secondAttribute="bottom" constant="17" id="yHV-mY-hfi"/>
                             <constraint firstItem="6is-kp-Vs7" firstAttribute="leading" secondItem="Qqr-Fa-lWA" secondAttribute="leading" constant="25" id="zxF-k8-HuL"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Qqr-Fa-lWA"/>
                     </view>
                     <connections>
+                        <outlet property="basePower" destination="mVO-Mf-N1c" id="Wsj-zV-Xmn"/>
                         <outlet property="powerUpSlider" destination="jF8-vK-5vC" id="fzz-lw-heM"/>
                         <outlet property="powerValue" destination="Hlm-cU-Tbd" id="dJg-E6-jfT"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TU7-Ww-Inj" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-951" y="38"/>
+            <point key="canvasLocation" x="-951.20000000000005" y="37.331334332833585"/>
         </scene>
     </scenes>
 </document>

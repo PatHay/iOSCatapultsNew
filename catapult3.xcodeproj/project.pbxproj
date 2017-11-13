@@ -10,6 +10,8 @@
 		2C2FD8E073AA4EAF5188CA5E /* Pods_catapult3UITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7241B44B4BAE0B3BFD02A1D9 /* Pods_catapult3UITests.framework */; };
 		407EA42A95D2DA01D727D506 /* Pods_catapult3Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 973DCF23D99B653B251AD96B /* Pods_catapult3Tests.framework */; };
 		77A1412FD5491DF0CF4819C4 /* Pods_catapult3.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8384CA938BCDB4ECF4BBF137 /* Pods_catapult3.framework */; };
+		876FD2151FB94FF6007167D0 /* PiratesMainTheme.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 876FD2141FB94FF6007167D0 /* PiratesMainTheme.mp3 */; };
+		876FD2191FB95377007167D0 /* catapult.gif in Resources */ = {isa = PBXBuildFile; fileRef = 876FD2181FB95377007167D0 /* catapult.gif */; };
 		8782737A1FB7CC12004A2221 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 878273791FB7CC12004A2221 /* AppDelegate.swift */; };
 		8782737C1FB7CC12004A2221 /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 8782737B1FB7CC12004A2221 /* GameScene.sks */; };
 		8782737E1FB7CC12004A2221 /* Actions.sks in Resources */ = {isa = PBXBuildFile; fileRef = 8782737D1FB7CC12004A2221 /* Actions.sks */; };
@@ -47,6 +49,8 @@
 		5DB2D0B0F4B338F49F3C8899 /* Pods-catapult3.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-catapult3.debug.xcconfig"; path = "Pods/Target Support Files/Pods-catapult3/Pods-catapult3.debug.xcconfig"; sourceTree = "<group>"; };
 		7241B44B4BAE0B3BFD02A1D9 /* Pods_catapult3UITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_catapult3UITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8384CA938BCDB4ECF4BBF137 /* Pods_catapult3.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_catapult3.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		876FD2141FB94FF6007167D0 /* PiratesMainTheme.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = PiratesMainTheme.mp3; sourceTree = "<group>"; };
+		876FD2181FB95377007167D0 /* catapult.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = catapult.gif; sourceTree = "<group>"; };
 		878273761FB7CC12004A2221 /* catapult3.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = catapult3.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		878273791FB7CC12004A2221 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8782737B1FB7CC12004A2221 /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
@@ -99,6 +103,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		876FD2131FB94FE3007167D0 /* Music */ = {
+			isa = PBXGroup;
+			children = (
+				876FD2141FB94FF6007167D0 /* PiratesMainTheme.mp3 */,
+			);
+			path = Music;
+			sourceTree = "<group>";
+		};
 		8782736D1FB7CC12004A2221 = {
 			isa = PBXGroup;
 			children = (
@@ -126,9 +138,11 @@
 			children = (
 				878273791FB7CC12004A2221 /* AppDelegate.swift */,
 				8782737B1FB7CC12004A2221 /* GameScene.sks */,
+				876FD2131FB94FE3007167D0 /* Music */,
 				8782737D1FB7CC12004A2221 /* Actions.sks */,
 				8782737F1FB7CC12004A2221 /* GameScene.swift */,
 				878273811FB7CC12004A2221 /* GameViewController.swift */,
+				876FD2181FB95377007167D0 /* catapult.gif */,
 				878273AF1FB7DD87004A2221 /* delegation.swift */,
 				878273AD1FB7D640004A2221 /* MapViewController.swift */,
 				878273831FB7CC12004A2221 /* Main.storyboard */,
@@ -298,8 +312,10 @@
 			files = (
 				878273851FB7CC12004A2221 /* Main.storyboard in Resources */,
 				8782737C1FB7CC12004A2221 /* GameScene.sks in Resources */,
+				876FD2151FB94FF6007167D0 /* PiratesMainTheme.mp3 in Resources */,
 				878273871FB7CC12004A2221 /* Assets.xcassets in Resources */,
 				8782738A1FB7CC12004A2221 /* LaunchScreen.storyboard in Resources */,
+				876FD2191FB95377007167D0 /* catapult.gif in Resources */,
 				8782737E1FB7CC12004A2221 /* Actions.sks in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

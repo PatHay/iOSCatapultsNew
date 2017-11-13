@@ -10,75 +10,93 @@ import UIKit
 import SpriteKit
 import GameplayKit
 import GoogleMaps
+import AVFoundation
 
 class GameViewController: UIViewController {
     
     @IBOutlet weak var powerUpSlider: UISlider!
     
-    //Storyboard Controls
-    //--------------------------------
+    @IBOutlet weak var basePower: UISlider!
+
     
     @IBOutlet weak var powerValue: UILabel!
     
+    
+    //Storyboard Controls
+    //--------------------------------
+    //Base power bar
     @IBAction func powerValueSlider(_ sender: UISlider) {
 //        let value = "\(sender.value)"
-        let value = round(Double(Int(sender.value)))
+        let value = round(Double(Int(basePower.value)))
         powerValue.text = String(value)
         
-    }
-    @IBAction func powerUpSlider(_ sender: UISlider) {
+        calculate()
         
-//        let value: String!
-//            print("\(10,Int(powerValue.text!))")
-//        print("This is the power level value \(value)")
-//
-            calculate()
+    }
+    
+    //2nd power slider++++++++++++++++++++++++
+    @IBAction func powerUpSlider(_ sender: UISlider) {
+        calculate()
     }
     
     @IBAction func fireButtonPressed(_ sender: UIButton) {
         print("Fire!")
     }
-    
-    //--------------------------------
-    
-    //2nd power slider++++++++++++++++++++++++
+
+    //exponential increase in power calculator
     func calculate(){
-        if let x = powerValue.text {
-            let input = Double(x)
+        if powerValue.text != nil {
+            let base = Double(round(basePower.value))
             let powerUp = Double(round(pow(10, powerUpSlider.value)))
             
-            let multiply = input! * powerUp
+            let multiply = base * powerUp
             
             powerValue.text = String(round(multiply))
             
         }
     }
-    //++++++++++++++++++++++++
+    //--------------------------------
+
     
     
     var locationManager: CLLocationManager!
     
-
+    var audioPlayer = AVAudioPlayer()
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-//        //Heading Information+++++++++++++++++++++++++++++++++
-//        
-//        locationManager = CLLocationManager()
-//        locationManager.delegate = self as? CLLocationManagerDelegate
-//        
-//        locationManager.startUpdatingHeading()
-//        
-//        
-//        
-//        //++++++++++++++++++++++++++++++++++++++++++++++++++++
-//        
-//        //Heading Information+++++++++++++++++++++++++++++++++
-//        func locationManagerChecker(manager: CLLocationManager!, didUpdateHeading newHeading: CLHeading!){
-//            print("Heading information: \(newHeading.magneticHeading) at: \(newHeading.timestamp)")
-//        }
-//        
-//        //++++++++++++++++++++++++++++++++++++++++++++++++++++
+        //Music player Start++++++++++++++
+        
+        do {
+            audioPlayer = try AVAudioPlayer(contentsOf: URL.init(fileURLWithPath: Bundle.main.path(forResource: "PiratesMainTheme", ofType: "mp3")!))
+            audioPlayer.prepareToPlay()
+            audioPlayer.play()
+        } catch {
+            print(error)
+        }
+        
+        //++++++++++++++++++++++++++++++++++++++++++
+        
+        
+        //Heading Information+++++++++++++++++++++++++++++++++
+        
+        locationManager = CLLocationManager()
+        locationManager.delegate = self as? CLLocationManagerDelegate
+        
+        locationManager.startUpdatingHeading()
+        
+        
+        
+        //++++++++++++++++++++++++++++++++++++++++++++++++++++
+        
+        //Heading Information+++++++++++++++++++++++++++++++++
+        func locationManagerChecker(manager: CLLocationManager!, didUpdateHeading newHeading: CLHeading!){
+            print("Heading information: \(newHeading.magneticHeading) at: \(newHeading.timestamp)")
+        }
+        
+        //++++++++++++++++++++++++++++++++++++++++++++++++++++
         
         
         // Load 'GameScene.sks' as a GKScene. This provides gameplay related content
